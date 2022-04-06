@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">exercise_kitten</string>
+    <string name="menu">menu</string>
+
+    <string name="essexlad">Essexlad</string>
+    <string name="view_and_edite_profile">View and edit profile</string>
+    <string name="get_verified">Get Verified</string>
+    <string name="become_a_trusted_member">Became a trusted member of the kommunity and start interacting</string>
+    <string name="verify_now">Verify now</string>
+    <string name="complete_your_profile">Complete your profile</string>
+    <string name="take_a_few_steps">Take a few steps to show the kommunity who you really are</string>
+    <string name="lets_get_it_done">Let\'s get it done</string>
+    <string name="events_tickets"><![CDATA[Events \n& E-tickets]]></string>
+    <string name="buy_and_access">Buy and access your party and workshop tickets</string>
+    <string name="logout">Logout</string>
+    <string name="account_settings">Account settings</string>
+</resources>
