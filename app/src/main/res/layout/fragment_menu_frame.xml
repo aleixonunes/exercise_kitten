@@ -4,258 +4,265 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/myFragment"
     tools:context=".MenuFrameFragment">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/gray"
-        android:orientation="vertical">
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="20dp"
-                android:paddingTop="12dp"
-                android:paddingEnd="16dp"
-                android:paddingBottom="12dp">
-
-                <ImageView
-                    android:id="@+id/profilePic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@null"
-                    android:src="@drawable/profile_pic"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/profileName"
-                    style="@style/FontBN.Title.Small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="9dp"
-                    android:paddingEnd="9dp"
-                    android:text="@string/essexlad"
-                    app:layout_constraintStart_toEndOf="@id/profilePic"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/profileOptions"
-                    style="@style/FontLM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="9dp"
-                    android:paddingEnd="9dp"
-                    android:text="@string/view_and_edite_profile"
-                    app:layout_constraintStart_toEndOf="@id/profilePic"
-                    app:layout_constraintTop_toBottomOf="@id/profileName" />
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/ic_close"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="16dp"
-            app:cardCornerRadius="20dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/getVerified"
-                    style="@style/FontBN.Title.ExtraBig"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="22dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginRight="22dp"
-                    android:text="@string/get_verified"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/getVerifiedDesc"
-                    style="@style/FontLM"
-                    android:layout_width="198dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="@string/become_a_trusted_member"
-                    android:textSize="13sp"
-                    app:layout_constraintStart_toStartOf="@id/getVerified"
-                    app:layout_constraintTop_toBottomOf="@id/getVerified" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="22dp"
-                    android:background="@drawable/red_gradient_background"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:text="@string/verify_now"
-                    app:cornerRadius="64dp"
-                    app:icon="@drawable/ic_warning"
-                    app:layout_constraintStart_toStartOf="@id/getVerifiedDesc"
-                    app:layout_constraintTop_toBottomOf="@id/getVerifiedDesc" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingRight="18dp"
-                    android:src="@drawable/kitty_pic"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    tools:ignore="MissingConstraints" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="16dp"
-            app:cardCornerRadius="20dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="22dp">
-
-                <ImageView
-                    android:id="@+id/profilePicBig"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginTop="8dp"
-                    android:src="@drawable/profile_pic"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints" />
-
-                <TextView
-                    android:id="@+id/completeProfile"
-                    style="@style/FontBN.Title.Big"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="22dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="22dp"
-                    android:lines="2"
-                    android:text="@string/complete_your_profile"
-                    app:layout_constraintStart_toEndOf="@id/profilePicBig"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/takeAFewSteps"
-                    style="@style/FontLM"
-                    android:layout_width="198dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:paddingBottom="20dp"
-                    android:text="@string/take_a_few_steps"
-                    android:textSize="13sp"
-                    app:layout_constraintStart_toStartOf="@id/completeProfile"
-                    app:layout_constraintTop_toBottomOf="@id/completeProfile" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/red_gradient_background"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:text="@string/lets_get_it_done"
-                    app:cornerRadius="64dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/takeAFewSteps" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="16dp"
-            app:cardCornerRadius="20dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gray_gradient_background">
-
-                <TextView
-                    android:id="@+id/eventsTickets"
-                    style="@style/FontBN.Title.ExtraBig"
-                    android:layout_width="190dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="30dp"
-                    android:lines="2"
-                    android:text="@string/events_tickets"
-                    android:textColor="@color/white"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/buyAndAccess"
-                    style="@style/FontLM"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="@string/buy_and_access"
-                    android:textColor="@color/white"
-                    android:textSize="13sp"
-                    app:layout_constraintStart_toStartOf="@id/eventsTickets"
-                    app:layout_constraintTop_toBottomOf="@id/eventsTickets" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/kitty_pic2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    tools:ignore="MissingConstraints" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="horizontal">
+            android:background="@color/gray"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="12dp">
+
+                    <ImageView
+                        android:id="@+id/profilePic"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/profile_pic"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/profileName"
+                        style="@style/FontBN.Title.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="9dp"
+                        android:paddingEnd="9dp"
+                        android:text="@string/essexlad"
+                        app:layout_constraintStart_toEndOf="@id/profilePic"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/profileOptions"
+                        style="@style/FontLM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="9dp"
+                        android:paddingTop="0dp"
+                        android:paddingEnd="9dp"
+                        android:paddingBottom="0dp"
+                        android:text="@string/view_and_edite_profile"
+                        app:layout_constraintStart_toEndOf="@id/profilePic"
+                        app:layout_constraintTop_toBottomOf="@id/profileName" />
+
+                    <ImageButton
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/ic_close"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/getVerified"
+                        style="@style/FontBN.Title.ExtraBig"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="22dp"
+                        android:text="@string/get_verified"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/getVerifiedDesc"
+                        style="@style/FontLM"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:lineHeight="18dp"
+                        android:text="@string/become_a_trusted_member"
+                        android:textSize="13sp"
+                        app:layout_constraintStart_toStartOf="@id/getVerified"
+                        app:layout_constraintTop_toBottomOf="@id/getVerified" />
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="22dp"
+                        android:background="@drawable/red_gradient_background"
+                        android:text="@string/verify_now"
+                        app:icon="@drawable/ic_warning"
+                        app:layout_constraintStart_toStartOf="@id/getVerifiedDesc"
+                        app:layout_constraintTop_toBottomOf="@id/getVerifiedDesc" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingRight="18dp"
+                        android:src="@drawable/kitty_pic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="22dp">
+
+                    <ImageView
+                        android:id="@+id/profilePicBig"
+                        android:layout_width="104dp"
+                        android:layout_height="104dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="4dp"
+                        android:src="@drawable/profile_pic_stroke_red"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                    <TextView
+                        android:id="@+id/completeProfileTv"
+                        style="@style/FontBN.Title.Big"
+                        android:layout_width="200dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="22dp"
+                        android:gravity="center_vertical"
+                        android:lineHeight="27dp"
+                        android:lines="2"
+                        android:text="@string/complete_your_profile"
+                        app:layout_constraintStart_toEndOf="@id/profilePicBig"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/takeAFewStepsTv"
+                        style="@style/FontLM"
+                        android:layout_width="198dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:lineHeight="18dp"
+                        android:text="@string/take_a_few_steps"
+                        android:textSize="13sp"
+                        app:layout_constraintStart_toStartOf="@id/completeProfileTv"
+                        app:layout_constraintTop_toBottomOf="@id/completeProfileTv" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/doneBtn"
+                        style="@style/Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/blue_gradient_background"
+                        android:text="@string/lets_get_it_done"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/profilePicBig" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gray_gradient_background">
+
+                    <TextView
+                        android:id="@+id/eventsTickets"
+                        style="@style/FontBN.Title.ExtraBig"
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="26dp"
+                        android:lineHeight="36dp"
+                        android:lines="2"
+                        android:text="@string/events_tickets"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/buyAndAccess"
+                        style="@style/FontLM"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="20dp"
+                        android:text="@string/buy_and_access"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/eventsTickets"
+                        app:layout_constraintTop_toBottomOf="@id/eventsTickets" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/kitty_pic2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 style="@style/FontBN.Title"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
                 android:drawablePadding="10dp"
                 android:gravity="center_vertical"
+                android:lineHeight="18dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:text="@string/account_settings"
@@ -270,6 +277,7 @@
                 style="@style/FontBN.Title"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:background="@color/white"
                 android:drawablePadding="10dp"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
@@ -282,10 +290,17 @@
                 android:layout_height="1dp"
                 android:background="@color/gray_transparency" />
 
-
         </LinearLayout>
 
+    </ScrollView>
 
-    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone"
+        tools:visibility="visible"/>
 
 </FrameLayout>

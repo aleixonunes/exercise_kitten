@@ -14,4 +14,5 @@
     <string name="buy_and_access">Buy and access your party and workshop tickets</string>
     <string name="logout">Logout</string>
     <string name="account_settings">Account settings</string>
+    <string name="success">Success!</string>
 </resources>

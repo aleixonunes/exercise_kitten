@@ -5,55 +5,72 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.example.exercise_kitten.Service.APIInterface
+import com.example.exercise_kitten.Service.APIClient
+import com.example.exercise_kitten.Service.ResponseData
+import com.example.exercise_kitten.databinding.FragmentMenuFrameBinding
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MenuFrameFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MenuFrameFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var _binding: FragmentMenuFrameBinding? = null
+    private val binding get() = _binding!!
+    private var myCompositeDisposable: CompositeDisposable? = null
+    private var apiService: APIInterface? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        myCompositeDisposable = CompositeDisposable()
+        apiService = APIClient().getClient().create(APIInterface::class.java)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        myCompositeDisposable?.clear()
+        _binding = null
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu_frame, container, false)
+    ): View {
+        _binding = FragmentMenuFrameBinding.inflate(inflater, container, false)
+        binding.doneBtn.setOnClickListener {
+            performRequest()
+        }
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MenuFrameFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MenuFrameFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun performRequest() {
+        binding.progressBar.visibility = View.VISIBLE
+        myCompositeDisposable?.add(
+            apiService!!.getData()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe({
+                    handleResponse(it)
+                }, {
+                    handleErrorResponse()
+                }))
+    }
+
+    private fun handleResponse(response: ResponseData) {
+        binding.completeProfileTv.text = response.data.title
+        binding.takeAFewStepsTv.text = response.data.message
+        binding.doneBtn.text = resources.getString(R.string.success)
+        binding.doneBtn.setBackgroundResource(R.drawable.green_gradient_background)
+        binding.doneBtn.isEnabled = false
+        binding.profilePicBig.setImageResource(R.drawable.profile_pic_stroke_green)
+        binding.progressBar.visibility = View.GONE
+
+    }
+
+    private fun handleErrorResponse() {
+        Toast.makeText(context, "An error occurred. Please try again", Toast.LENGTH_LONG).show()
+        binding.progressBar.visibility = View.GONE
     }
 }

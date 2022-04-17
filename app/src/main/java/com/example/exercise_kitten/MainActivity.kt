@@ -1,7 +1,10 @@
 package com.example.exercise_kitten
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
 import com.example.exercise_kitten.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -13,13 +16,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.bottomNavigationView.itemIconTintList = null
-        binding.bottomNavigationView.setOnItemReselectedListener {
+        binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.page3 -> {
+                R.id.menu -> {
+                    binding.bottomNavigationView.animate()
+                        .translationY(binding.bottomNavigationView.height.toFloat())
+
                     supportFragmentManager.beginTransaction()
-                        .add(R.id.fragmentContainerView, MenuFrameFragment()).commit()
+                        .setCustomAnimations(R.anim.animation, R.anim.animation)
+                        .add(R.id.fragmentContainerView, MenuFrameFragment())
+                        .commit()
                 }
             }
+            false
         }
     }
 

@@ -1,4 +1,3 @@
 package com.example.exercise_kitten.Service
 
-class ResponseData {
-}
+data class ResponseData(val success: String, val data: DataKK)

@@ -17,7 +17,7 @@
         android:icon="@null"
         android:title="@null"/>
     <item
-        android:id="@+id/page3"
+        android:id="@+id/menu"
         android:enabled="true"
         android:icon="@drawable/ic_menu"
         android:title="@null"/>
