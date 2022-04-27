@@ -26,9 +26,8 @@ class MenuFrameFragment : Fragment() {
     ): View {
         _binding = FragmentMenuFrameBinding.inflate(inflater, container, false)
 
-        _binding.doneBtn.setOnClickListener {
-            fetchData()
-        }
+        _binding.doneBtn.setOnClickListener { fetchData() }
+        _binding.closeBtn.setOnClickListener { _binding.mainLL.removeView(_binding.topCardView) }
 
         return _binding.root
     }
