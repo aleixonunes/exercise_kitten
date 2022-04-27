@@ -1,12 +1,12 @@
-package com.example.exercise_kitten
+package com.example.exercise_kitten.view
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.View
+import com.example.exercise_kitten.R
 import com.example.exercise_kitten.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
